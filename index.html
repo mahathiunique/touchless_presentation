@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touchless Presentation Controller</title>
+    <meta name="description" content="Control your presentations with hand gestures using MediaPipe hand tracking. Swipe, zoom, and point without touching your device.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <header id="top-bar">
+        <div class="top-bar-left">
+            <span class="logo-icon">🖐️</span>
+            <h1>Touchless Controller</h1>
+        </div>
+        <div class="top-bar-right">
+            <div id="gesture-badge" class="gesture-badge">
+                <span id="gesture-icon">👆</span>
+                <span id="gesture-label">Waiting...</span>
+            </div>
+            <div id="slide-counter" class="slide-counter">1 / 3</div>
+        </div>
+    </header>
+
+    <!-- Slide Container -->
+    <main id="slide-container">
+        <img id="current-slide" src="DAY2/1.png" alt="Slide 1" draggable="false">
+        <div id="slide-transition-overlay"></div>
+    </main>
+
+    <!-- Navigation Hints -->
+    <div id="nav-hint-left" class="nav-hint">
+        <span>◀</span>
+    </div>
+    <div id="nav-hint-right" class="nav-hint">
+        <span>▶</span>
+    </div>
+
+    <!-- Single Pointer (NO trail elements) -->
+    <div id="pointer"></div>
+
+    <!-- Webcam Preview -->
+    <canvas id="webcam-canvas" width="320" height="240"></canvas>
+
+    <!-- MediaPipe Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils@0.1/camera_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils@0.1/drawing_utils.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands@0.4.1675469240/hands.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
